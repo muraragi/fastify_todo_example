@@ -1,3 +1,5 @@
+require('make-promises-safe')
+
 // Require the framework and instantiate it
 const fastify = require('fastify')()
 

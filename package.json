@@ -11,6 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "fastify": "^1.11.2",
-    "make-promises-safe": "^1.1.0"
+    "fastify-plugin": "^1.2.1",
+    "make-promises-safe": "^1.1.0",
+    "mongoose": "^5.2.17"
   }
 }

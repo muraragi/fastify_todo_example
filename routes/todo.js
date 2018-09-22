@@ -31,6 +31,17 @@ async function routes(fastify, options) {
     reply.code(201)
     return { success: true, id }
   })
+
+  //Update Todo
+
+  fastify.put('/:id', async (request, reply) => {
+    const id = request.params.id
+    const updatedTodo = request.body
+
+    await Todo.findByIdAndUpdate(id, updatedTodo)
+    reply.code(201)
+    return { success: true, id }
+  })
 }
 
 module.exports = routes

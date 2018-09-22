@@ -4,9 +4,7 @@ require('make-promises-safe')
 const fastify = require('fastify')()
 
 // Declare a route
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' }
-})
+fastify.register(require('./routes/todo'))
 
 // Run the server!
 const start = async () => {

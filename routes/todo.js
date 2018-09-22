@@ -6,6 +6,12 @@ async function routes(fastify, options) {
     return result
   })
 
+  fastify.get('/:id', async (requset, reply) => {
+    const id = requset.params.id
+    const result = await Todo.findById(id)
+    return result
+  })
+
   fastify.post('/', async (request, reply) => {
     const todo = request.body
 

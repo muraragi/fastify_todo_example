@@ -8,6 +8,7 @@ function mongooseConnector(fastify, options, next) {
   )
   let db = mongoose.connection
   mongoose.Promise = Promise
+  mongoose.set('useFindAndModify', false)
   db.on('error', console.error.bind(console, 'Connection error:'))
   db.once('open', () => {
     console.log(`Connected to ${options.url}`)

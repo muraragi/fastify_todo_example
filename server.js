@@ -3,10 +3,15 @@ require('make-promises-safe')
 // Require the framework and instantiate it
 const fastify = require('fastify')()
 
+fastify.register(require('fastify-formbody'))
+
 //Database Connection
 fastify.register(require('./config/connection'), {
-  url: 'mongodb://localhost:27017/'
+  url: 'mongodb://localhost:27017/fastify',
 })
+
+//Models plugin
+fastify.register(require('./models'))
 
 // Declare a route
 fastify.register(require('./routes/todo'))
